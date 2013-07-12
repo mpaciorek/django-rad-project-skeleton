@@ -121,6 +121,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'south',
     'bootstrapform',
+    'util'
 )
 
 # A sample logging configuration. The only tangible logging
