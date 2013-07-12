@@ -2,7 +2,7 @@
 import os
 
 PROJECT_DIR = os.path.dirname(__file__)
-PUBLIC_DIR = os.path.join(PROJECT_DIR, 'public')
+PUBLIC_DIR = os.path.join(PROJECT_DIR, 'static')
 
 DEBUG = False
 TEMPLATE_DEBUG = True
@@ -20,11 +20,11 @@ MANAGERS = ADMINS
 # timezone as the operating system.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Warsaw'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pl-PL'
 
 SITE_ID = 1
 
@@ -46,13 +46,13 @@ MEDIA_ROOT = os.path.join(PUBLIC_DIR, 'media')
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = '/media/'
+MEDIA_URL = '/static/media/'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = os.path.join(PUBLIC_DIR, 'static')
+STATIC_ROOT = PUBLIC_DIR
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -110,9 +110,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
 )
 
-FIXTURE_DIRS = (
-    os.path.join(PROJECT_DIR, 'fixtures'),
-)
 
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -122,6 +119,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
+    'south',
+    'bootstrapform',
 )
 
 # A sample logging configuration. The only tangible logging
